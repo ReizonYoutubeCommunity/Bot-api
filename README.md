@@ -10,16 +10,16 @@ https://pointy-periodic-candytuft.glitch.me/api/<bot>/
   "text": '<pergunta>'
 }
 ```
-##você também poderá enviar mais informações como:
+## você também poderá enviar mais informações como:
 
-###O NOME do usuario
+### O NOME do usuario
 ```json
 { 
   "text": '<Pergunta>',
   "userName": '<Nome do Usuario>'
 }
 ```
-###A linguagem que você quer que o bot responda
+### A linguagem que você quer que o bot responda
 ```json
 { 
   "text": '<Pergunta>',
