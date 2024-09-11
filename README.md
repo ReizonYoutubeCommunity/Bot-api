@@ -2,7 +2,7 @@
 Uma "ajuda" para quem quer usar minha api
 
 # Url da API
-https://pointy-periodic-candytuft.glitch.me/api/<bot>/
+https://pointy-periodic-candytuft.glitch.me/api/'bot'/
 
 # Exemplo do json que deve ser enviado para o servidor
 ```json
@@ -101,3 +101,24 @@ else:
 ## observações
 Lembre-se de substituir <Bot> pelo nome do Bot que você deseja usar, você pode criar o seu pelo meu bot no número do WhatsApp: 558791080400, usando o comando: %CriarBot
 e também Substitua <pergunta> pela sua pergunta
+
+
+# resposta Da API
+## em caso de sucesso
+``` json
+{
+  "status":"success",
+  "message":"<Resposta do bot>"
+}
+```
+
+## em caso de erro
+``` json
+{
+  "error":"<motivo>",
+  "status":"error",
+  "message":"⚠️error⚠️"
+}
+```
+
+
