@@ -5,7 +5,7 @@ Uma "ajuda" para quem quer usar minha api
 https://pointy-periodic-candytuft.glitch.me/api/<bot>/
 
 # Exemplo Nodejs
-
+``` js
 // Client-side code (e.g. in a browser or using Node.js)
 const jsonData = { 
   text: 'oi? tudo bem com voce? qual é o seu nome?', 
@@ -23,4 +23,4 @@ fetch('https://pointy-periodic-candytuft.glitch.me/api/1h23', {
 .then(response => response.json())
 .then(data => console.log(`Received response: ${JSON.stringify(data)}`))
 .catch(error => console.error('Error:', error));
-
+```
