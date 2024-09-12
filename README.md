@@ -40,10 +40,10 @@ se você não informar isso a linguagem padrão de resposta é 'PT-BR'
 ## Informação importante
 A 'text' não pode faltar no json
 
+# codigos
+## NodeJs
 
-# Codigo NodeJs
-
-## Js/ts
+### Js/ts
 ``` js
 const json = { 
   "text": '<pergunta>'
@@ -61,25 +61,18 @@ fetch('https://pointy-periodic-candytuft.glitch.me/api/<Bot>', {
 .catch(error => console.error('Error:', error));
 
 ```
-## observações
-Lembre-se de substituir <Bot> pelo nome do Bot que você deseja usar, você pode criar o seu pelo meu bot no número do WhatsApp: 558791080400 
-e também Substitua <pergunta> pela sua pergunta
 
-
-# Codigo Curl
-## exemplo
+## Curl
+### exemplo
 ``` curl
 curl -X POST \
   https://pointy-periodic-candytuft.glitch.me/api/<bot> \
   -H 'Content-Type: application/json' \
   -d '{"text": "<pergunta>"}'
 ```
-## observações
-Lembre-se de substituir <Bot> pelo nome do Bot que você deseja usar, você pode criar o seu pelo meu bot no número do WhatsApp: 558791080400, usando o comando: %CriarBot
-e também Substitua <pergunta> pela sua pergunta
 
-# python
-## exemplo
+## python
+### exemplo
 ``` py
 import requests
 import json
@@ -99,9 +92,9 @@ else:
     print(f"Error: {response.status_code}")
 ```
 ## observações
-Lembre-se de substituir <Bot> pelo nome do Bot que você deseja usar, você pode criar o seu pelo meu bot no número do WhatsApp: 558791080400, usando o comando: %CriarBot
-e também Substitua <pergunta> pela sua pergunta
-
+lembre-se em todos os exemplos de substituir 'Bot' pelo nome verdadeiro do seu bot
+pois se não modificar isso a api não irá funcionar, e também modifique 'Pergunta' pela sua real pergunta
+você pode criar o seu bot digitando o seguinte comando: !CriarBot, no número do WhatsApp: 558791080400
 
 # resposta Da API
 ## em caso de sucesso
