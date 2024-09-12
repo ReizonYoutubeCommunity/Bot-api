@@ -1,5 +1,12 @@
-# Bot-api
+# Bot-api V1
 Uma "ajuda" para quem quer usar minha api
+historico ✅️
+envio de nome do usuário ✅️
+personalização de bot ✅️
+modificação da linguagem de resposta do bot ✅️
+data e hora de São Paulo ❌️ na v2 da nossa api
+modificação de data e hora ❌️
+um site para conversar com o bot, sem ser api ❌️ em desenvolvimento, provavelmente chega na V2 ou V3 da api
 
 # Url da API
 https://pointy-periodic-candytuft.glitch.me/api/'bot'/
@@ -19,6 +26,31 @@ https://pointy-periodic-candytuft.glitch.me/api/'bot'/
   "userName": '<Nome do Usuario>'
 }
 ```
+### envio de historico
+#### exemplo 1
+```json
+{ 
+  "text": '<Pergunta>',
+  "Historic": {
+    //seu historico aqui
+  }
+}
+```
+#### exemplo 2
+bom se você usar a historic você pode colocar o historico lá dentro como quiser, mais o jeito que eu recomendo é alternando entre 'user' e 'chat' mais pode ser como você quiser!!!
+```json
+{ 
+  "text": '<Pergunta>',
+  "Historic": {
+    "user": "oi?",
+    "chat": "oi tudo bem?",
+    "user": "Sim",
+    "chat": "que bom"
+  }
+}
+```
+isso foi so um exemplo de como eu uso mais as variáveis podem ter nomes diferentes
+ mais que de de entender
 ### A linguagem que você quer que o bot responda
 ```json
 { 
