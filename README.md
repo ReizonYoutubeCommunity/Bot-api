@@ -1,12 +1,13 @@
 # Bot-api V1
-Uma "ajuda" para quem quer usar minha api \n
-historico ✅️ \n
-envio de nome do usuário ✅️ \n
-personalização de bot ✅️
-modificação da linguagem de resposta do bot ✅️
-data e hora de São Paulo ❌️ na v2 da nossa api
-modificação de data e hora ❌️
-um site para conversar com o bot, sem ser api ❌️ em desenvolvimento, provavelmente chega na V2 ou V3 da api
+#### Uma "ajuda" para quem quer usar minha api \n
+## funções
+#### historico ✅️ 
+#### envio de nome do usuário ✅️
+#### personalização de bot ✅️
+#### modificação da linguagem de resposta do bot ✅️
+#### data e hora de São Paulo ❌️ na v2 da nossa api
+#### modificação de data e hora ❌️
+#### um site para conversar com o bot, sem ser api ❌️ em desenvolvimento, provavelmente chega na V2 ou V3 da api
 
 # Url da API
 https://pointy-periodic-candytuft.glitch.me/api/'bot'/
