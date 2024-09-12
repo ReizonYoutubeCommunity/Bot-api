@@ -1,7 +1,7 @@
 # Bot-api V1
-Uma "ajuda" para quem quer usar minha api
-historico ✅️
-envio de nome do usuário ✅️
+Uma "ajuda" para quem quer usar minha api \n
+historico ✅️ \n
+envio de nome do usuário ✅️ \n
 personalização de bot ✅️
 modificação da linguagem de resposta do bot ✅️
 data e hora de São Paulo ❌️ na v2 da nossa api
