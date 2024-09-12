@@ -1,85 +1,151 @@
-# Bot-api V1
-#### Uma "ajuda" para quem quer usar minha api \n
-## funções
-#### historico ✅️ 
-#### envio de nome do usuário ✅️
-#### personalização de bot ✅️
-#### modificação da linguagem de resposta do bot ✅️
-#### data e hora de São Paulo ❌️ na v2 da nossa api
-#### modificação de data e hora ❌️
-#### um site para conversar com o bot, sem ser api ❌️ em desenvolvimento, provavelmente chega na V2 ou V3 da api
+## Documentação da API Bot-API V1
 
-# Url da API
-https://pointy-periodic-candytuft.glitch.me/api/'bot'/
+Este documento detalha as funcionalidades da API Bot-API V1,  uma ferramenta que permite a criação de bots personalizados e interativos.
 
-# Exemplo do json que deve ser enviado para o servidor
+### Introdução
+
+A API Bot-API V1 oferece uma variedade de recursos para a criação de bots, incluindo histórico de conversas, personalização, controle da linguagem de resposta e integração com outros sistemas.
+
+### Funcionalidades
+
+A API Bot-API V1 suporta as seguintes funcionalidades:
+
+**Funcionalidades Ativas:**
+
+* **Histórico de Conversas:** Permite o armazenamento e recuperação do histórico de conversas entre o bot e o usuário.
+* **Envio do Nome do Usuário:** Possibilita a identificação do usuário através do envio do seu nome.
+* **Personalização do Bot:** Permite a personalização do bot, incluindo a definição de sua personalidade e comportamento.
+* **Modificação da Linguagem de Resposta do Bot:** Permite a definição da linguagem de resposta do bot, com suporte a múltiplos idiomas.
+
+**Funcionalidades em Desenvolvimento:**
+
+* **Data e Hora de São Paulo:** A integração com a data e hora de São Paulo estará disponível na versão V2 da API.
+* **Modificação de Data e Hora:** A possibilidade de modificar a data e hora do bot estará disponível na versão V2 da API.
+* **Site para Conversar com o Bot:** Um site dedicado à interação com o bot sem a necessidade da API, está em desenvolvimento e estará disponível na versão V2 ou V3 da API.
+
+### URL da API
+
+A URL da API Bot-API V1 é:
+
+```
+https://pointy-periodic-candytuft.glitch.me/api/<Bot>/
+```
+
+Onde `<Bot>` representa o nome do seu bot.
+
+### Estrutura do JSON de Requisição
+
+O JSON de requisição para a API Bot-API V1 deve ter a seguinte estrutura:
+
 ```json
-{ 
-  "text": '<pergunta>'
+{
+  "text": "<pergunta>"
 }
 ```
-## você também poderá enviar mais informações como:
 
-### O NOME do usuario
+**Parâmetros opcionais:**
+
+* **userName:** Nome do usuário.
+* **Historic:** Histórico de conversas.
+* **linguage:** Linguagem de resposta do bot.
+
+### Exemplos de JSON de Requisição
+
+**Exemplo 1: Envio de uma pergunta simples:**
+
 ```json
-{ 
-  "text": '<Pergunta>',
-  "userName": '<Nome do Usuario>'
+{
+  "text": "Olá, como está?"
 }
 ```
-### envio de historico
-#### exemplo 1
+
+**Exemplo 2: Envio de uma pergunta com o nome do usuário:**
+
 ```json
-{ 
-  "text": '<Pergunta>',
+{
+  "text": "Olá, como está?",
+  "userName": "João"
+}
+```
+
+**Exemplo 3: Envio de uma pergunta com histórico de conversas:**
+
+```json
+{
+  "text": "E você?",
   "Historic": {
-    //seu historico aqui
+    "user": "Olá, como está?",
+    "chat": "Olá, estou bem! E você?"
   }
 }
 ```
-#### exemplo 2
-bom se você usar a historic você pode colocar o historico lá dentro como quiser, mais o jeito que eu recomendo é alternando entre 'user' e 'chat' mais pode ser como você quiser!!!
+
+**Exemplo 4: Envio de uma pergunta com a linguagem de resposta:**
+
 ```json
-{ 
-  "text": '<Pergunta>',
-  "Historic": {
-    "user": "oi?",
-    "chat": "oi tudo bem?",
-    "user": "Sim",
-    "chat": "que bom"
-  }
+{
+  "text": "Olá, como está?",
+  "linguage": "EN-US"
 }
 ```
-isso foi so um exemplo de como eu uso mais as variáveis podem ter nomes diferentes
- mais que de de entender
-### A linguagem que você quer que o bot responda
+
+### Informações Importantes
+
+* O parâmetro `text` é obrigatório em todos os JSONs de requisição.
+* A linguagem de resposta padrão é `PT-BR`.
+* Você pode criar o seu bot utilizando o comando `!CriarBot` no número do WhatsApp: 558791080400.
+
+### Resposta da API
+
+A API Bot-API V1 retorna um JSON com a seguinte estrutura:
+
+**Em caso de sucesso:**
+
 ```json
-{ 
-  "text": '<Pergunta>',
-  "linguage": '<Linguagem de Resposta>'
+{
+  "status": "success",
+  "message": "<Resposta do bot>"
 }
 ```
-se você não informar isso a linguagem padrão de resposta é 'PT-BR'
 
+**Em caso de erro:**
 
-### Ou tudo Junto
 ```json
-{ 
-  "text": '<Pergunta>',
-  "linguage": '<Linguagem de Resposta>',
-  "userName": '<Nome do Usuario>'
+{
+  "error": "<motivo>",
+  "status": "error",
+  "message": "⚠️error⚠️"
 }
 ```
-## Informação importante
-A 'text' não pode faltar no json
 
-# codigos
-## NodeJs
+### Exemplos de Resposta da API
 
-### Js/ts
-``` js
-const json = { 
-  "text": '<pergunta>'
+**Exemplo 1: Resposta de sucesso:**
+
+```json
+{
+  "status": "success",
+  "message": "Olá, estou bem, obrigado por perguntar!"
+}
+```
+
+**Exemplo 2: Resposta de erro:**
+
+```json
+{
+  "error": "Parâmetro 'text' ausente",
+  "status": "error",
+  "message": "⚠️error⚠️"
+}
+```
+
+### Codigos de Exemplo
+
+**NodeJs:**
+
+```js
+const json = {
+  "text": "<pergunta>"
 };
 
 fetch('https://pointy-periodic-candytuft.glitch.me/api/<Bot>', {
@@ -92,20 +158,19 @@ fetch('https://pointy-periodic-candytuft.glitch.me/api/<Bot>', {
 .then(response => response.json())
 .then(data => console.log(`${JSON.stringify(data)}`))
 .catch(error => console.error('Error:', error));
-
 ```
 
-## Curl
-### exemplo
+**Curl:**
+
 ``` curl
 curl -X POST \
-  https://pointy-periodic-candytuft.glitch.me/api/<bot> \
-  -H 'Content-Type: application/json' \
-  -d '{"text": "<pergunta>"}'
+ https://pointy-periodic-candytuft.glitch.me/api/<bot> \
+ -H 'Content-Type: application/json' \
+ -d '{\"text\": \"<pergunta>\"}'
 ```
 
-## python
-### exemplo
+**Python:**
+
 ``` py
 import requests
 import json
@@ -113,38 +178,24 @@ import json
 json_data = {"text": "<pergunta>"}
 
 response = requests.post(
-    f"https://pointy-periodic-candytuft.glitch.me/api/<bot>",
-    headers={"Content-Type": "application/json"},
-    data=json.dumps(json_data)
+  f"https://pointy-periodic-candytuft.glitch.me/api/<bot>",
+  headers={"Content-Type": "application/json"},
+  data=json.dumps(json_data)
 )
 
 if response.status_code == 200:
-    data = response.json()
-    print(json.dumps(data))
+  data = response.json()
+  print(json.dumps(data))
 else:
-    print(f"Error: {response.status_code}")
-```
-## observações
-lembre-se em todos os exemplos de substituir 'Bot' pelo nome verdadeiro do seu bot
-pois se não modificar isso a api não irá funcionar, e também modifique 'Pergunta' pela sua real pergunta
-você pode criar o seu bot digitando o seguinte comando: !CriarBot, no número do WhatsApp: 558791080400
-
-# resposta Da API
-## em caso de sucesso
-``` json
-{
-  "status":"success",
-  "message":"<Resposta do bot>"
-}
+  print(f"Error: {response.status_code}")
 ```
 
-## em caso de erro
-``` json
-{
-  "error":"<motivo>",
-  "status":"error",
-  "message":"⚠️error⚠️"
-}
-```
+### Observações
 
+* Em todos os exemplos acima, substitua `<Bot>` pelo nome do seu bot.
+* Substitua `<pergunta>` pela sua pergunta real.
+* Certifique-se de configurar o código de acordo com sua linguagem de programação.
 
+### Conclusão
+
+A API Bot-API V1 oferece uma plataforma completa para a criação de bots personalizados. Com suas funcionalidades avançadas e interface simples, ela permite a construção de bots inteligentes e interativos para diversas aplicações.
